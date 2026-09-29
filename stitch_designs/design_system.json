@@ -1,0 +1,166 @@
+{
+  "displayName": "Technical Blueprint & Lab Notebook",
+  "styleGuidelines": "## Brand & Style\n\nThis design system embodies the clinical precision of an architectural drafting desk collided with the blunt rigor of a peer code audit. It treats submitted source code not as abstract text, but as a physical blueprint undergoing structural stress-testing.\n\nThe aesthetic fuses technical drafting documents, lab notebooks, and terminal diagnostics. It eschews soft \"friendly\" SaaS motifs, blurred glass, and floating dropshadows in favor of razor-sharp geometry, structural ink lines, explicit framing, and schematic demarcations. \n\nThe emotional tone balances surgical irreverence with profound engineering credibility:\n- **Surgical & Rigorous:** Evokes calibrated tools, high-grade drafting paper, schematics, and mechanical ink pens.\n- **Unforgiving Diagnostic:** Roasts are presented as structural engineering failure analyses—direct, unapologetic, and analytical.\n- **Utilitarian Mastery:** Prioritizes high legibility, monospaced data streams, and dense informational layouts over ornamental whitespace.\n\n## Layout & Spacing\n\nThe layout is structured around an explicit technical grid reminiscent of ISO drafting paper and IDE panes.\n\n### Blueprint Canvas & Grid System\nThe main canvas displays a repeatable CSS background drafting pattern:\n- Subtle 24px x 24px coordinate grid lines generated via 1px `#E6E6E2`.\n- Primary panels sit flush or neatly snapped to the grid axes.\n- A 12-column modular split dictates the workbench:\n  - **Desktop (>= 1200px):** 50/50 split workspace or 5-column source input alongside 7-column roast/fix telemetry stream. 16px (`1rem`) gutters, 24px outer margin.\n  - **Tablet (768px - 1199px):** Stacked full-width drafting decks. Sticky secondary subnav for jumping directly from `01 // INPUT` to `02 // AUDIT`.\n  - **Mobile (< 768px):** Single-column stacked mode with horizontal scrolling diff viewports. Margins reduce to 16px.\n\n### Spatial Rhythm\nInternal component padding adheres strictly to multiples of 4px/8px:\n- `space-xs` (4px): Inline badge padding, tag separation.\n- `space-sm` (8px): Control gaps, icon margins, compact header gutters.\n- `space-md` (16px): Standard panel inner padding, workbench card margins.\n- `space-lg` (24px): Primary drafting module padding, section separations.\n- `space-xl` (40px): Major block breaks and canvas terminal footers.\n\n## Elevation & Depth\n\nThis design system completely rejects soft ambient shadows, blurred halos, and pseudo-3D extrusion. Depth is conveyed exclusively through structural contrast, mechanical frames, and rigid hard-edge offsets.\n\n### Structural Depth Techniques\n1. **Ink Framing (1px & 2px Rules):** Every panel, card, input, and popover is bounded by a crisp solid line. Inactive layers use 1px `#E6E6E2`; interactive and focused components step up to 1px `#111111` or 2px `#111111`.\n2. **Hard Ink Cast Shadow (Mechanical Offset):** Active modals, elevated tooltips, and high-impact roast verdict badges use a zero-blur, hard offset shadow:\n   `box-shadow: 4px 4px 0px #111111;`\n   When depressed (active state), buttons translate down and right:\n   `transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111111;`\n3. **Corner Crosshairs & Framing Notches:** Major diagnostic modules feature corner ticks or visual drafting registration marks (`+` or `L` shaped border markers in `#111111`) at quadrant vertices to emphasize structural assembly.\n\n## Components\n\n### Buttons & Trigger Controls\n- **Primary CTA (\"EXECUTE ROAST\"):** Background `#D94826`, foreground `#FFFFFF`, border `2px solid #111111`. Monospace uppercase bold with `0.1em` letter spacing. Hard shadow `3px 3px 0px #111111`. Hover: background `#C23B1B`. Active: translates `2px 2px` with `1px 1px 0px #111111`.\n- **Secondary Action:** Background `#FDFDFD`, foreground `#111111`, border `1px solid #111111`. Hover: background `#F5F5F3` with black fill reverse (`#111111` background, `#FDFDFD` text).\n- **Icon / Utility Buttons:** Strict square (1:1 ratio), 0px radius, 1px border.\n\n### Input Fields & Code Editor Viewport\n- **Code Terminal Area:** Background `#FDFDFD`, border `1px solid #111111`. Integrated horizontal header bar with label syntax: `INPUT // SRC — JAVASCRIPT` and a monospaced line/byte counter pinned right.\n- **Line Numbers Gutter:** Delimited by a solid 1px hairline border (`#E6E6E2`), text color `#6E6E6A`, non-selectable.\n- **Focus State:** Border expands to `2px solid #111111` or `#D94826` without layout shift (via matching outline or border-box offsets).\n\n### Severity Badges & Status Chips\n- Built with a 1px solid border, 0px radius, uppercase monospace `label-sm` typography with an explicit dot or glyph prefix:\n  - **Fatal (`[!] FATAL`):** Background `#FEE2E2`, text `#D94826`, border `#D94826`.\n  - **Code Smell (`[?] SMELL`):** Background `#FEF3C7`, text `#B45309`, border `#B45309`.\n  - **Optimization (`[✓] FIX`):** Background `#DCFCE7`, text `#16A34A`, border `#16A34A`.\n\n### Audit Cards & Diff Viewports\n- **Roast Narrative Card:** Surface `#FDFDFD`, 1px solid `#111111` outline, hard offset shadow `4px 4px 0px #111111`. Header features a burnt roast stamp badge (`STAMP // REJECTED` in `#D94826`).\n- **Engineering Fix Patch (Diff Module):** Side-by-side or unified inline diff. Removals marked with light red-orange background tint and `-` prefix. Additions marked with technical green tint and `+` prefix. Header includes a copy-patch utility button with zero-radius ink framing.\n\n### Section Banners & Tabs\n- Flat folder-tab style along the top of panel frames. Active tab is `#FDFDFD` with top, left, and right borders of `1px solid #111111` and an open bottom edge seamlessly merging into the container below. Inactive tabs are `#F5F5F3` with all 4 borders closed.",
+  "theme": {
+    "bodyFont": "JETBRAINS_MONO",
+    "bodyFontFamily": "JetBrains Mono",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#d94826",
+    "designMd": "---\nname: Technical Blueprint & Lab Notebook\ncolors:\n  surface: '#f9f9f7'\n  surface-dim: '#dadad8'\n  surface-bright: '#f9f9f7'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f4f4f2'\n  surface-container: '#eeeeec'\n  surface-container-high: '#e8e8e6'\n  surface-container-highest: '#e2e3e1'\n  on-surface: '#1a1c1b'\n  on-surface-variant: '#5a413b'\n  inverse-surface: '#2f3130'\n  inverse-on-surface: '#f1f1ef'\n  outline: '#8e7069'\n  outline-variant: '#e2bfb6'\n  surface-tint: '#b22c0b'\n  primary: '#ae2a08'\n  on-primary: '#ffffff'\n  primary-container: '#d14221'\n  on-primary-container: '#fffbff'\n  inverse-primary: '#ffb4a3'\n  secondary: '#5f5e5e'\n  on-secondary: '#ffffff'\n  secondary-container: '#e5e2e1'\n  on-secondary-container: '#656464'\n  tertiary: '#984300'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#bb5810'\n  on-tertiary-container: '#fffbff'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#ffdad2'\n  primary-fixed-dim: '#ffb4a3'\n  on-primary-fixed: '#3d0700'\n  on-primary-fixed-variant: '#8b1b00'\n  secondary-fixed: '#e5e2e1'\n  secondary-fixed-dim: '#c8c6c5'\n  on-secondary-fixed: '#1c1b1b'\n  on-secondary-fixed-variant: '#474646'\n  tertiary-fixed: '#ffdbca'\n  tertiary-fixed-dim: '#ffb68e'\n  on-tertiary-fixed: '#331200'\n  on-tertiary-fixed-variant: '#763300'\n  background: '#f9f9f7'\n  on-background: '#1a1c1b'\n  surface-variant: '#e2e3e1'\ntypography:\n  headline-xl:\n    fontFamily: Space Grotesk\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: 52px\n    letterSpacing: -0.03em\n  headline-xl-mobile:\n    fontFamily: Space Grotesk\n    fontSize: 32px\n    fontWeight: '700'\n    lineHeight: 36px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Space Grotesk\n    fontSize: 32px\n    fontWeight: '700'\n    lineHeight: 38px\n    letterSpacing: -0.02em\n  headline-lg-mobile:\n    fontFamily: Space Grotesk\n    fontSize: 24px\n    fontWeight: '700'\n    lineHeight: 30px\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Space Grotesk\n    fontSize: 22px\n    fontWeight: '600'\n    lineHeight: 28px\n    letterSpacing: -0.01em\n  headline-sm:\n    fontFamily: Space Grotesk\n    fontSize: 18px\n    fontWeight: '600'\n    lineHeight: 24px\n    letterSpacing: 0em\n  body-lg:\n    fontFamily: JetBrains Mono\n    fontSize: 15px\n    fontWeight: '400'\n    lineHeight: 24px\n    letterSpacing: -0.01em\n  body-md:\n    fontFamily: JetBrains Mono\n    fontSize: 13px\n    fontWeight: '400'\n    lineHeight: 20px\n    letterSpacing: 0em\n  body-sm:\n    fontFamily: JetBrains Mono\n    fontSize: 11px\n    fontWeight: '400'\n    lineHeight: 16px\n    letterSpacing: 0.02em\n  label-lg:\n    fontFamily: JetBrains Mono\n    fontSize: 13px\n    fontWeight: '600'\n    lineHeight: 16px\n    letterSpacing: 0.08em\n  label-md:\n    fontFamily: JetBrains Mono\n    fontSize: 11px\n    fontWeight: '600'\n    lineHeight: 14px\n    letterSpacing: 0.1em\n  label-sm:\n    fontFamily: JetBrains Mono\n    fontSize: 9px\n    fontWeight: '700'\n    lineHeight: 12px\n    letterSpacing: 0.14em\nspacing:\n  gutter: 1rem\n  margin: 1.5rem\n  space-xs: 0.25rem\n  space-sm: 0.5rem\n  space-md: 1rem\n  space-lg: 1.5rem\n  space-xl: 2.5rem\n---\n\n## Brand & Style\n\nThis design system embodies the clinical precision of an architectural drafting desk collided with the blunt rigor of a peer code audit. It treats submitted source code not as abstract text, but as a physical blueprint undergoing structural stress-testing.\n\nThe aesthetic fuses technical drafting documents, lab notebooks, and terminal diagnostics. It eschews soft \"friendly\" SaaS motifs, blurred glass, and floating dropshadows in favor of razor-sharp geometry, structural ink lines, explicit framing, and schematic demarcations. \n\nThe emotional tone balances surgical irreverence with profound engineering credibility:\n- **Surgical & Rigorous:** Evokes calibrated tools, high-grade drafting paper, schematics, and mechanical ink pens.\n- **Unforgiving Diagnostic:** Roasts are presented as structural engineering failure analyses—direct, unapologetic, and analytical.\n- **Utilitarian Mastery:** Prioritizes high legibility, monospaced data streams, and dense informational layouts over ornamental whitespace.\n\n## Colors\n\nThe palette simulates tactile, physical media: drafting linen paper, deep permanent India ink, and deliberate forensic highlight stamps.\n\n### Core Canvas & Structure\n- **Canvas Base (`#F5F5F3`):** Unbleached drafting vellum. Used as the global viewport background, textured with faint coordinate graph lines.\n- **Panel Surface (`#FDFDFD`):** Crisp technical drafting card stock. Used for containers, code input blocks, and audit readouts.\n- **Structural Ink (`#111111`):** Heavyweight technical drawing ink used for primary structural frames, sharp borders, high-contrast buttons, and primary display headers.\n- **Grid Hairline (`#E6E6E2`):** Subtle coordinate rules, dividers, and background blueprint lines.\n- **Muted Ink (`#6E6E6A`):** Metadata, coordinate callouts, line numbers, and secondary annotations.\n\n### Functional Diagnostic Accents\n- **Fatal / Roast Red-Orange (`#D94826`):** Burnt ember accent. Reserved exclusively for primary roast triggers, critical vulnerability callouts, fatal syntax errors, and destructive diagnostics.\n- **Code Smell / Amber (`#B45309`):** Cautionary architectural flaw marker. Denotes antipatterns, cognitive complexity warnings, and tech debt flags.\n- **Optimization Green (`#16A34A`):** Verified engineering remedy. Applied to refactored patches, passing benchmark deltas, and corrected snippets.\n- **Terminal Cyan (`#0284C7`):** Supplementary mechanical accent used for AST tokens, diff coordinates, and schema bracket markers.\n\n## Typography\n\nThe typography establishes a strict split between architectural titling and technical telemetry.\n\n- **Space Grotesk** is used for macro anchors: page titles, modal heads, and primary diagnostic verdict headers. It brings geometric structural weight without corporate blandness.\n- **JetBrains Mono** governs the entire functional layer: all source code inputs, refactored output snippets, forensic critiques, status tags, telemetry data, and section breadcrumbs.\n\n### Section Marker Standard\nAll module headings, panels, and toolbars must feature tracked uppercase index syntax formatted as:\n`[INDEX] // [PHASE] — [DESCRIPTOR]`\nExamples:\n- `01 // INPUT — SOURCE ARTIFACT`\n- `02 // AUDIT — STRUCTURAL ROAST`\n- `03 // REMEDY — PATCH GENERATION`\n\n## Layout & Spacing\n\nThe layout is structured around an explicit technical grid reminiscent of ISO drafting paper and IDE panes.\n\n### Blueprint Canvas & Grid System\nThe main canvas displays a repeatable CSS background drafting pattern:\n- Subtle 24px x 24px coordinate grid lines generated via 1px `#E6E6E2`.\n- Primary panels sit flush or neatly snapped to the grid axes.\n- A 12-column modular split dictates the workbench:\n  - **Desktop (>= 1200px):** 50/50 split workspace or 5-column source input alongside 7-column roast/fix telemetry stream. 16px (`1rem`) gutters, 24px outer margin.\n  - **Tablet (768px - 1199px):** Stacked full-width drafting decks. Sticky secondary subnav for jumping directly from `01 // INPUT` to `02 // AUDIT`.\n  - **Mobile (< 768px):** Single-column stacked mode with horizontal scrolling diff viewports. Margins reduce to 16px.\n\n### Spatial Rhythm\nInternal component padding adheres strictly to multiples of 4px/8px:\n- `space-xs` (4px): Inline badge padding, tag separation.\n- `space-sm` (8px): Control gaps, icon margins, compact header gutters.\n- `space-md` (16px): Standard panel inner padding, workbench card margins.\n- `space-lg` (24px): Primary drafting module padding, section separations.\n- `space-xl` (40px): Major block breaks and canvas terminal footers.\n\n## Elevation & Depth\n\nThis design system completely rejects soft ambient shadows, blurred halos, and pseudo-3D extrusion. Depth is conveyed exclusively through structural contrast, mechanical frames, and rigid hard-edge offsets.\n\n### Structural Depth Techniques\n1. **Ink Framing (1px & 2px Rules):** Every panel, card, input, and popover is bounded by a crisp solid line. Inactive layers use 1px `#E6E6E2`; interactive and focused components step up to 1px `#111111` or 2px `#111111`.\n2. **Hard Ink Cast Shadow (Mechanical Offset):** Active modals, elevated tooltips, and high-impact roast verdict badges use a zero-blur, hard offset shadow:\n   `box-shadow: 4px 4px 0px #111111;`\n   When depressed (active state), buttons translate down and right:\n   `transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111111;`\n3. **Corner Crosshairs & Framing Notches:** Major diagnostic modules feature corner ticks or visual drafting registration marks (`+` or `L` shaped border markers in `#111111`) at quadrant vertices to emphasize structural assembly.\n\n## Shapes\n\nThe shape vocabulary is unapologetically sharp, geometric, and architectural.\n\n- **Zero Curvature:** Default `border-radius: 0px` across all inputs, code editor frames, cards, badges, buttons, tooltips, and toast notices. If technical limitations or browser antialiasing require softenings, an absolute hard ceiling of `2px` is permitted, though `0px` is preferred.\n- **Chamfered Geometries:** Interactive tags, severity status chips, and audit callout headers may use diagonal 45-degree chamfered cut corners (e.g., `clip-path: polygon(...)`) to resemble physical drafting stencils and industrial machinery warning plates.\n\n## Components\n\n### Buttons & Trigger Controls\n- **Primary CTA (\"EXECUTE ROAST\"):** Background `#D94826`, foreground `#FFFFFF`, border `2px solid #111111`. Monospace uppercase bold with `0.1em` letter spacing. Hard shadow `3px 3px 0px #111111`. Hover: background `#C23B1B`. Active: translates `2px 2px` with `1px 1px 0px #111111`.\n- **Secondary Action:** Background `#FDFDFD`, foreground `#111111`, border `1px solid #111111`. Hover: background `#F5F5F3` with black fill reverse (`#111111` background, `#FDFDFD` text).\n- **Icon / Utility Buttons:** Strict square (1:1 ratio), 0px radius, 1px border.\n\n### Input Fields & Code Editor Viewport\n- **Code Terminal Area:** Background `#FDFDFD`, border `1px solid #111111`. Integrated horizontal header bar with label syntax: `INPUT // SRC — JAVASCRIPT` and a monospaced line/byte counter pinned right.\n- **Line Numbers Gutter:** Delimited by a solid 1px hairline border (`#E6E6E2`), text color `#6E6E6A`, non-selectable.\n- **Focus State:** Border expands to `2px solid #111111` or `#D94826` without layout shift (via matching outline or border-box offsets).\n\n### Severity Badges & Status Chips\n- Built with a 1px solid border, 0px radius, uppercase monospace `label-sm` typography with an explicit dot or glyph prefix:\n  - **Fatal (`[!] FATAL`):** Background `#FEE2E2`, text `#D94826`, border `#D94826`.\n  - **Code Smell (`[?] SMELL`):** Background `#FEF3C7`, text `#B45309`, border `#B45309`.\n  - **Optimization (`[✓] FIX`):** Background `#DCFCE7`, text `#16A34A`, border `#16A34A`.\n\n### Audit Cards & Diff Viewports\n- **Roast Narrative Card:** Surface `#FDFDFD`, 1px solid `#111111` outline, hard offset shadow `4px 4px 0px #111111`. Header features a burnt roast stamp badge (`STAMP // REJECTED` in `#D94826`).\n- **Engineering Fix Patch (Diff Module):** Side-by-side or unified inline diff. Removals marked with light red-orange background tint and `-` prefix. Additions marked with technical green tint and `+` prefix. Header includes a copy-patch utility button with zero-radius ink framing.\n\n### Section Banners & Tabs\n- Flat folder-tab style along the top of panel frames. Active tab is `#FDFDFD` with top, left, and right borders of `1px solid #111111` and an open bottom edge seamlessly merging into the container below. Inactive tabs are `#F5F5F3` with all 4 borders closed.",
+    "font": "SPACE_GROTESK",
+    "headlineFont": "SPACE_GROTESK",
+    "headlineFontFamily": "Space Grotesk",
+    "labelFont": "JETBRAINS_MONO",
+    "labelFontFamily": "JetBrains Mono",
+    "namedColors": {
+      "background": "#f9f9f7",
+      "error": "#ba1a1a",
+      "error_container": "#ffdad6",
+      "inverse_on_surface": "#f1f1ef",
+      "inverse_primary": "#ffb4a3",
+      "inverse_surface": "#2f3130",
+      "on_background": "#1a1c1b",
+      "on_error": "#ffffff",
+      "on_error_container": "#93000a",
+      "on_primary": "#ffffff",
+      "on_primary_container": "#fffbff",
+      "on_primary_fixed": "#3d0700",
+      "on_primary_fixed_variant": "#8b1b00",
+      "on_secondary": "#ffffff",
+      "on_secondary_container": "#656464",
+      "on_secondary_fixed": "#1c1b1b",
+      "on_secondary_fixed_variant": "#474646",
+      "on_surface": "#1a1c1b",
+      "on_surface_variant": "#5a413b",
+      "on_tertiary": "#ffffff",
+      "on_tertiary_container": "#fffbff",
+      "on_tertiary_fixed": "#331200",
+      "on_tertiary_fixed_variant": "#763300",
+      "outline": "#8e7069",
+      "outline_variant": "#e2bfb6",
+      "primary": "#ae2a08",
+      "primary_container": "#d14221",
+      "primary_fixed": "#ffdad2",
+      "primary_fixed_dim": "#ffb4a3",
+      "secondary": "#5f5e5e",
+      "secondary_container": "#e5e2e1",
+      "secondary_fixed": "#e5e2e1",
+      "secondary_fixed_dim": "#c8c6c5",
+      "surface": "#f9f9f7",
+      "surface_bright": "#f9f9f7",
+      "surface_container": "#eeeeec",
+      "surface_container_high": "#e8e8e6",
+      "surface_container_highest": "#e2e3e1",
+      "surface_container_low": "#f4f4f2",
+      "surface_container_lowest": "#ffffff",
+      "surface_dim": "#dadad8",
+      "surface_tint": "#b22c0b",
+      "surface_variant": "#e2e3e1",
+      "tertiary": "#984300",
+      "tertiary_container": "#bb5810",
+      "tertiary_fixed": "#ffdbca",
+      "tertiary_fixed_dim": "#ffb68e"
+    },
+    "overrideNeutralColor": "#f5f5f3",
+    "overridePrimaryColor": "#d94826",
+    "overrideSecondaryColor": "#111111",
+    "overrideTertiaryColor": "#b45309",
+    "spacing": {
+      "gutter": "1rem",
+      "margin": "1.5rem",
+      "space-lg": "1.5rem",
+      "space-md": "1rem",
+      "space-sm": "0.5rem",
+      "space-xl": "2.5rem",
+      "space-xs": "0.25rem"
+    },
+    "spacingScale": 2,
+    "typography": {
+      "body-lg": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "24px"
+      },
+      "body-md": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "letterSpacing": "0em",
+        "lineHeight": "20px"
+      },
+      "body-sm": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "11px",
+        "fontWeight": "400",
+        "letterSpacing": "0.02em",
+        "lineHeight": "16px"
+      },
+      "headline-lg": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "32px",
+        "fontWeight": "700",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "38px"
+      },
+      "headline-lg-mobile": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "24px",
+        "fontWeight": "700",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "30px"
+      },
+      "headline-md": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "22px",
+        "fontWeight": "600",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "28px"
+      },
+      "headline-sm": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "letterSpacing": "0em",
+        "lineHeight": "24px"
+      },
+      "headline-xl": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "48px",
+        "fontWeight": "700",
+        "letterSpacing": "-0.03em",
+        "lineHeight": "52px"
+      },
+      "headline-xl-mobile": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "32px",
+        "fontWeight": "700",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "36px"
+      },
+      "label-lg": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "13px",
+        "fontWeight": "600",
+        "letterSpacing": "0.08em",
+        "lineHeight": "16px"
+      },
+      "label-md": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "11px",
+        "fontWeight": "600",
+        "letterSpacing": "0.1em",
+        "lineHeight": "14px"
+      },
+      "label-sm": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "9px",
+        "fontWeight": "700",
+        "letterSpacing": "0.14em",
+        "lineHeight": "12px"
+      }
+    }
+  }
+}

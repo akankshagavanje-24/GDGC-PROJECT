@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CODE ROASTER v1.4.2 // AUDIT VIEW</title>
+<!-- Google Fonts: Space Grotesk & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#763300",
+            "on-tertiary-fixed": "#331200",
+            "surface-container": "#eeeeec",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#5a413b",
+            "on-primary-container": "#fffbff",
+            "on-background": "#1a1c1b",
+            "primary-fixed-dim": "#ffb4a3",
+            "surface-variant": "#e2e3e1",
+            "tertiary-fixed-dim": "#ffb68e",
+            "primary-fixed": "#ffdad2",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#bb5810",
+            "on-tertiary-container": "#fffbff",
+            "error": "#ba1a1a",
+            "surface-container-low": "#f4f4f2",
+            "on-secondary-fixed": "#1c1b1b",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#2f3130",
+            "secondary-container": "#e5e2e1",
+            "outline-variant": "#e2bfb6",
+            "surface": "#f9f9f7",
+            "primary-container": "#d14221",
+            "outline": "#8e7069",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#b22c0b",
+            "surface-container-high": "#e8e8e6",
+            "secondary-fixed": "#e5e2e1",
+            "surface-container-highest": "#e2e3e1",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#656464",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#c8c6c5",
+            "primary": "#ae2a08",
+            "secondary": "#5f5e5e",
+            "background": "#f9f9f7",
+            "surface-bright": "#f9f9f7",
+            "tertiary": "#984300",
+            "on-secondary-fixed-variant": "#474646",
+            "inverse-primary": "#ffb4a3",
+            "on-primary-fixed": "#3d0700",
+            "on-surface": "#1a1c1b",
+            "surface-dim": "#dadad8",
+            "on-primary-fixed-variant": "#8b1b00",
+            "tertiary-fixed": "#ffdbca",
+            "inverse-on-surface": "#f1f1ef"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "margin": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["JetBrains Mono"],
+            "headline-lg": ["Space Grotesk"],
+            "label-md": ["JetBrains Mono"],
+            "headline-md": ["Space Grotesk"],
+            "label-sm": ["JetBrains Mono"],
+            "headline-sm": ["Space Grotesk"],
+            "body-sm": ["JetBrains Mono"],
+            "headline-xl": ["Space Grotesk"],
+            "headline-xl-mobile": ["Space Grotesk"],
+            "body-lg": ["JetBrains Mono"],
+            "headline-lg-mobile": ["Space Grotesk"],
+            "label-lg": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["9px", { "lineHeight": "12px", "letterSpacing": "0.14em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "headline-xl": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Blueprint Drafting Grid Background */
+    .blueprint-grid {
+      background-color: #f5f5f3;
+      background-image: 
+        linear-gradient(to right, #e6e6e2 1px, transparent 1px),
+        linear-gradient(to bottom, #e6e6e2 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Mechanical Zero-Blur Offsets */
+    .hard-shadow-sm {
+      box-shadow: 2px 2px 0px #111111;
+    }
+    .hard-shadow-md {
+      box-shadow: 4px 4px 0px #111111;
+    }
+    .hard-shadow-lg {
+      box-shadow: 6px 6px 0px #111111;
+    }
+
+    /* Custom Technical Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f4f4f2;
+      border-left: 1px solid #111111;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #111111;
+    }
+
+    /* Code Highlight Line Rules */
+    .line-error-highlight {
+      background-color: #fee2e2;
+      border-left: 3px solid #d94826;
+    }
+    .line-warning-highlight {
+      background-color: #fef3c7;
+      border-left: 3px solid #d97706;
+    }
+  </style>
+</head>
+<body class="blueprint-grid text-on-surface min-h-screen flex flex-col justify-between selection:bg-primary selection:text-white relative p-space-sm md:p-space-md">
+<!-- ==================== TOP NAVIGATION SHELL (JSON DEFINITION) ==================== -->
+<header class="w-full max-w-[1400px] mx-auto mb-space-sm bg-surface flex justify-between items-center h-14 border-2 border-on-surface px-space-md shadow-[3px_3px_0px_#111111]">
+<!-- Left: Brand / ID & Nav links -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 bg-primary inline-block"></span>
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface uppercase tracking-tight">CODE ROASTER v1.4.2</span>
+<span class="bg-surface-container-highest border border-on-surface px-1 py-0.5 text-label-sm font-label-sm font-bold ml-1">[RELEASE]</span>
+</div>
+<!-- Navigation Tabs -->
+<nav class="hidden md:flex items-center gap-space-md ml-space-lg text-label-md font-label-md">
+<a class="text-secondary font-medium py-1 hover:text-primary transition-colors" href="#">01 // INPUT</a>
+<!-- Active Nav: Screen 2 is Results & Audit -->
+<a class="border-b-2 border-primary text-primary font-bold py-1" href="#">02 // AUDIT</a>
+<a class="text-secondary font-medium py-1 hover:text-primary transition-colors" href="#">DOCS</a>
+</nav>
+</div>
+<!-- Right Controls Cluster -->
+<div class="flex items-center gap-space-sm">
+<!-- Error Message Toggle (Secondary Trailing Action) -->
+<button class="hidden lg:flex items-center gap-1.5 px-space-sm py-1 border border-on-surface bg-surface-container-lowest text-label-md font-label-md hover:bg-surface-container transition-transform active:translate-x-[1px] active:translate-y-[1px]">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="check_box">check_box</span>
+<span>+ ERROR MESSAGE</span>
+<span class="bg-error-container text-on-error-container px-1 text-[9px] font-bold">MemoryError</span>
+</button>
+<!-- Utility Icons -->
+<button class="w-8 h-8 flex items-center justify-center border border-on-surface bg-surface-container-lowest hover:bg-surface-container active:translate-x-[1px] active:translate-y-[1px]" title="Telemetry Tune">
+<span class="material-symbols-outlined text-[16px]" data-icon="tune">tune</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center border border-on-surface bg-surface-container-lowest hover:bg-surface-container active:translate-x-[1px] active:translate-y-[1px]" title="Terminal Stream">
+<span class="material-symbols-outlined text-[16px]" data-icon="terminal">terminal</span>
+</button>
+<!-- Primary Action CTA (ROAST MY CODE / RE-ROAST) -->
+<button class="bg-[#D94826] text-white border-2 border-on-surface px-space-md py-1.5 text-label-md font-label-md uppercase font-bold tracking-wider hard-shadow-sm hover:bg-[#C23B1B] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px]" data-icon="bolt">bolt</span>
+<span>ROAST MY CODE [Ctrl+Enter]</span>
+</button>
+</div>
+</header>
+<!-- ==================== MAIN TECHNICAL WORKBENCH (1360px centered) ==================== -->
+<main class="w-full max-w-[1400px] mx-auto bg-surface-container-lowest border-2 border-on-surface hard-shadow-md relative mb-space-md">
+<!-- Registration Marks / Drafting Notches at Quadrant Vertices -->
+<span class="absolute -top-2 -left-2 text-[16px] font-bold text-on-surface leading-none select-none">+</span>
+<span class="absolute -top-2 -right-2 text-[16px] font-bold text-on-surface leading-none select-none">+</span>
+<span class="absolute -bottom-2 -left-2 text-[16px] font-bold text-on-surface leading-none select-none">+</span>
+<span class="absolute -bottom-2 -right-2 text-[16px] font-bold text-on-surface leading-none select-none">+</span>
+<!-- Workbench Sub-Header Ribbon: Context & Configuration Telemetry -->
+<div class="border-b-2 border-on-surface bg-surface-container-low px-space-md py-space-xs flex flex-wrap justify-between items-center text-label-sm font-label-sm">
+<div class="flex items-center gap-space-md">
+<span class="text-on-surface font-bold">PROJECT // BATCH-DATA-CORE</span>
+<span class="text-secondary">|</span>
+<span class="flex items-center gap-1">
+<span class="text-secondary">TARGET RUNTIME:</span>
+<span class="bg-surface-container border border-on-surface px-1.5 py-0.5 text-on-surface font-bold">PYTHON (CPython 3.12)</span>
+</span>
+<span class="text-secondary">|</span>
+<span class="flex items-center gap-1">
+<span class="text-secondary">ROAST AUDIT INTENSITY:</span>
+<span class="bg-[#d94826] text-white px-1.5 py-0.5 font-bold">[3] SAVAGE</span>
+</span>
+</div>
+<div class="flex items-center gap-space-sm mt-1 sm:mt-0">
+<span class="flex items-center gap-1 text-primary font-bold">
+<span class="w-2 h-2 rounded-none bg-primary animate-pulse"></span>
+          AUDIT COMPLETED // 2 FATAL ERRORS IDENTIFIED
+        </span>
+</div>
+</div>
+<!-- 2-COLUMN WORKBENCH SPLIT (50% / 50%) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-on-surface min-h-[780px]">
+<!-- ==================== LEFT COLUMN: SOURCE CODE EDITOR (50%) ==================== -->
+<section class="flex flex-col bg-surface-container-lowest">
+<!-- Editor Header Strip -->
+<div class="h-10 border-b border-on-surface bg-surface px-space-md flex justify-between items-center text-label-md font-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="code">code</span>
+<span class="font-bold text-on-surface tracking-wider">INPUT // SRC — batch_pipeline.py</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="bg-surface-container border border-outline px-1.5 py-0.5 text-label-sm font-label-sm font-semibold">[24 LINES]</span>
+<button class="text-secondary hover:text-primary hover:underline text-label-sm font-label-sm font-bold">[RESET]</button>
+</div>
+</div>
+<!-- Code Editor Body with Line Numbers and Error Markings -->
+<div class="flex-1 font-body-md text-body-md overflow-x-auto flex">
+<!-- Line Number Gutter -->
+<div class="w-12 bg-surface-container-low border-r border-[#E6E6E2] py-space-sm select-none text-right pr-2 text-secondary font-mono text-body-sm flex flex-col leading-6">
+<span>01</span><span>02</span><span>03</span><span>04</span><span>05</span>
+<span>06</span><span>07</span><span>08</span><span>09</span><span>10</span>
+<span class="text-primary font-bold bg-[#fee2e2]">11</span>
+<span class="text-primary font-bold bg-[#fee2e2]">12</span>
+<span class="text-primary font-bold bg-[#fee2e2]">13</span>
+<span>14</span><span>15</span><span>16</span>
+<span class="text-tertiary-container font-bold bg-[#fef3c7]">17</span>
+<span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+</div>
+<!-- Code Token Canvas -->
+<div class="flex-1 py-space-sm pl-3 font-mono text-body-sm text-[#111111] overflow-x-auto leading-6">
+<div class="text-secondary italic"># batch_pipeline.py — Ingestion worker harness</div>
+<div><span class="text-primary font-semibold">import</span> os, sys</div>
+<div><span class="text-primary font-semibold">from</span> typing <span class="text-primary font-semibold">import</span> Any, List, Optional</div>
+<div><span class="text-primary font-semibold">import</span> time</div>
+<div class="h-6"></div>
+<div><span class="text-primary font-semibold">class</span> <span class="font-bold">DataSinkPipeline</span>:</div>
+<div class="pl-4"><span class="text-primary font-semibold">def</span> <span class="font-bold">__init__</span>(self, cluster_id: <span class="text-tertiary font-medium">str</span>):</div>
+<div class="pl-8">self.cluster_id = cluster_id</div>
+<div class="pl-8">self.registry = {}</div>
+<div class="h-6"></div>
+<!-- Fault Line 11-13 (Mutable default arg) -->
+<div class="line-error-highlight -ml-3 pl-3 py-0.5">
+<span class="pl-4"><span class="text-primary font-semibold">def</span> <span class="font-bold text-[#b22c0b]">append_to</span>(self, element: Any, target: <span class="text-tertiary font-medium">list</span> = []) -&gt; <span class="text-tertiary font-medium">list</span>:</span>
+</div>
+<div class="line-error-highlight -ml-3 pl-3 py-0.5">
+<span class="pl-8 text-secondary italic">"""Mutates default list argument across batch instances."""</span>
+</div>
+<div class="line-error-highlight -ml-3 pl-3 py-0.5">
+<span class="pl-8">target.append(element)</span>
+</div>
+<div class="pl-8"><span class="text-primary font-semibold">return</span> target</div>
+<div class="h-6"></div>
+<div class="pl-4"><span class="text-primary font-semibold">def</span> <span class="font-bold">recursive_leak</span>(self, n: <span class="text-tertiary font-medium">int</span>) -&gt; <span class="text-tertiary font-medium">int</span>:</div>
+<!-- Fault Line 17 (Recursion depth) -->
+<div class="line-warning-highlight -ml-3 pl-3 py-0.5">
+<span class="pl-8"><span class="text-primary font-semibold">if</span> n &lt;= 1: <span class="text-primary font-semibold">return</span> 1</span>
+</div>
+<div class="line-warning-highlight -ml-3 pl-3 py-0.5">
+<span class="pl-8"><span class="text-primary font-semibold">return</span> self.recursive_leak(n - 1) + self.recursive_leak(n - 2)</span>
+</div>
+<div class="h-6"></div>
+<div><span class="text-primary font-semibold">if</span> __name__ == <span class="text-[#16a34a]">"__main__"</span>:</div>
+<div class="pl-4">sink = DataSinkPipeline(<span class="text-[#16a34a]">"us-east-1a"</span>)</div>
+<div class="pl-4"><span class="text-primary font-semibold">for</span> i <span class="text-primary font-semibold">in</span> <span class="text-tertiary font-medium">range</span>(100_000):</div>
+<div class="pl-8">sink.append_to(i)</div>
+<div class="pl-4">print(<span class="text-[#16a34a]">"Pipeline Run Complete"</span>)</div>
+</div>
+</div>
+<!-- Editor Status Strip / Telemetry Foot -->
+<div class="border-t border-on-surface bg-surface-container-low px-space-md py-1.5 flex flex-wrap justify-between items-center text-label-sm font-label-sm text-secondary">
+<div class="flex items-center gap-space-sm font-mono">
+<span>LN: 13</span>
+<span>|</span>
+<span>COL: 4</span>
+<span>|</span>
+<span>SPACES: 4</span>
+<span>|</span>
+<span>UTF-8</span>
+</div>
+<div class="flex items-center gap-2 font-bold text-primary">
+<span class="w-2 h-2 bg-primary"></span>
+<span>FLAGGED: 2 ISSUES (1 FATAL, 1 SMELL)</span>
+</div>
+</div>
+</section>
+<!-- ==================== RIGHT COLUMN: AUDIT & ROAST RESULTS (50%) ==================== -->
+<section class="flex flex-col bg-surface-container-lowest divide-y-2 divide-on-surface overflow-y-auto max-h-[860px]">
+<!-- Right Header Strip -->
+<div class="h-10 bg-surface px-space-md flex justify-between items-center text-label-md font-label-md sticky top-0 z-10 border-b border-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="report">report</span>
+<span class="font-bold text-on-surface tracking-wider">AUDIT // REPORT — Roast Report #CR-8841</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="bg-[#d94826] text-white px-2 py-0.5 text-label-sm font-label-sm font-bold tracking-wider">SAVAGE TIER AUDIT</span>
+<button class="hover:text-primary hover:underline text-label-sm font-label-sm font-bold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="download">download</span>
+              [EXPORT PDF / TXT]
+            </button>
+</div>
+</div>
+<!-- ================= SECTION 01 // ROAST ================= -->
+<div class="p-space-md bg-surface-bright">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-label-sm font-label-sm text-primary font-bold uppercase tracking-widest">01 // ROAST VERDICT</span>
+<span class="border border-[#d94826] text-[#d94826] bg-[#fee2e2] px-1.5 py-0.2 text-label-sm font-label-sm font-bold tracking-wider">STAMP // REJECTED</span>
+</div>
+<!-- Roast Quote Card -->
+<div class="border-2 border-on-surface bg-surface-container-lowest p-space-md border-l-[6px] border-l-[#d94826] hard-shadow-sm relative">
+<span class="absolute top-1 right-2 text-surface-container-highest text-headline-lg font-headline-lg select-none leading-none">”</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed font-medium">
+              “Congratulations, you built a memory leak masquerading as a data pipeline. Passing a mutable list as a default parameter in Python isn't just an antipattern; it's a structural guarantee that your microservice will collapse in production with an out-of-memory exception before your lunch break.”
+            </p>
+</div>
+</div>
+<!-- ================= SECTION 02 // WHAT'S WRONG ================= -->
+<div class="p-space-md bg-surface space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface font-bold uppercase tracking-widest">02 // WHAT'S WRONG (DIAGNOSTIC DECOMPOSITION)</span>
+<span class="text-secondary text-label-sm font-label-sm">3 DEFECTS RECORDED</span>
+</div>
+<!-- Issue Card A: Fatal -->
+<div class="border-2 border-on-surface bg-surface-container-lowest p-space-sm hard-shadow-sm">
+<div class="flex items-center justify-between border-b border-on-surface pb-space-xs mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="bg-on-surface text-surface-container-lowest px-1.5 py-0.5 text-label-sm font-label-sm font-bold">[#01]</span>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold text-[14px] leading-5">Mutable Default Argument in Function Signature</h4>
+</div>
+<span class="bg-[#FEE2E2] text-[#D94826] border border-[#D94826] px-1.5 py-0.5 text-label-sm font-label-sm font-bold">[!] FATAL</span>
+</div>
+<!-- Snippet Box with Left Accent Strip -->
+<div class="border border-on-surface bg-surface-container-low border-l-4 border-l-[#D94826] px-2 py-1 mb-2 font-mono text-body-sm">
+<code>def append_to(self, element: Any, target: list = []):</code>
+</div>
+<!-- Technical Comparison -->
+<div class="space-y-1 font-body-sm text-body-sm">
+<div class="text-[#ba1a1a] flex items-start gap-1.5">
+<span class="font-bold select-none">✕ Diagnosis:</span>
+<span>target is evaluated once at module load, persisting mutated state across calls.</span>
+</div>
+<div class="text-[#16A34A] flex items-start gap-1.5">
+<span class="font-bold select-none">✓ Expected:</span>
+<span>Use target: Optional[List[Any]] = None and instantiate list inside function body.</span>
+</div>
+</div>
+</div>
+<!-- Issue Card B: Code Smell -->
+<div class="border-2 border-on-surface bg-surface-container-lowest p-space-sm hard-shadow-sm">
+<div class="flex items-center justify-between border-b border-on-surface pb-space-xs mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="bg-on-surface text-surface-container-lowest px-1.5 py-0.5 text-label-sm font-label-sm font-bold">[#02]</span>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold text-[14px] leading-5">Unbounded Exponential Stack Recursion</h4>
+</div>
+<span class="bg-[#FEF3C7] text-[#B45309] border border-[#B45309] px-1.5 py-0.5 text-label-sm font-label-sm font-bold">[?] SMELL</span>
+</div>
+<div class="border border-on-surface bg-surface-container-low border-l-4 border-l-[#B45309] px-2 py-1 mb-2 font-mono text-body-sm">
+<code>return self.recursive_leak(n - 1) + self.recursive_leak(n - 2)</code>
+</div>
+<div class="space-y-1 font-body-sm text-body-sm">
+<div class="text-[#ba1a1a] flex items-start gap-1.5">
+<span class="font-bold select-none">✕ Diagnosis:</span>
+<span>O(2^n) time complexity and uncontrolled stack recursion leads to RecursionError crash.</span>
+</div>
+<div class="text-[#16A34A] flex items-start gap-1.5">
+<span class="font-bold select-none">✓ Expected:</span>
+<span>Replace with linear iterative accumulator or bind @functools.lru_cache.</span>
+</div>
+</div>
+</div>
+<!-- Issue Card C: Optimization -->
+<div class="border-2 border-on-surface bg-surface-container-lowest p-space-sm hard-shadow-sm">
+<div class="flex items-center justify-between border-b border-on-surface pb-space-xs mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="bg-on-surface text-surface-container-lowest px-1.5 py-0.5 text-label-sm font-label-sm font-bold">[#03]</span>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-bold text-[14px] leading-5">Unused Global Imports in Runtime Harness</h4>
+</div>
+<span class="bg-[#DCFCE7] text-[#16A34A] border border-[#16A34A] px-1.5 py-0.5 text-label-sm font-label-sm font-bold">[✓] OPTIMIZATION</span>
+</div>
+<div class="space-y-1 font-body-sm text-body-sm pt-1">
+<div class="text-[#ba1a1a] flex items-start gap-1.5">
+<span class="font-bold select-none">✕ Diagnosis:</span>
+<span>import os, sys loaded into module namespace but never referenced in AST.</span>
+</div>
+<div class="text-[#16A34A] flex items-start gap-1.5">
+<span class="font-bold select-none">✓ Expected:</span>
+<span>Prune unreferenced symbols to reduce cold-start latency and harness memory bloat.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= SECTION 03 // FIX (REFACTORED CODE BLOCK) ================= -->
+<div class="p-space-md bg-surface-bright">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-label-sm font-label-sm text-on-surface font-bold uppercase tracking-widest">03 // FIX (STRUCTURAL REMEDIATION PATCH)</span>
+<span class="text-label-sm font-label-sm text-[#16A34A] font-bold">ALL TESTS PASS</span>
+</div>
+<!-- Refactored Code Frame -->
+<div class="border-2 border-on-surface bg-surface-container-lowest hard-shadow-sm">
+<!-- Window Bar -->
+<div class="bg-surface-container-low border-b border-on-surface px-space-md py-1.5 flex justify-between items-center text-label-sm font-label-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 border border-on-surface bg-[#16A34A]"></span>
+<span class="font-bold text-on-surface">solution.py [REFACTORED]</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="border border-on-surface bg-surface-container-lowest px-2 py-0.5 font-bold hover:bg-on-surface hover:text-white transition-colors" onclick="navigator.clipboard.writeText('# Code copied'); this.innerText='COPIED!'; setTimeout(()=&gt;this.innerText='[COPY CODE]', 1500)">
+                  [COPY CODE]
+                </button>
+<button class="bg-primary text-white border border-on-surface px-2 py-0.5 font-bold hover:bg-[#8b1b00] transition-colors">
+                  [APPLY TO EDITOR]
+                </button>
+</div>
+</div>
+<!-- Code Content -->
+<div class="p-space-sm font-mono text-body-sm leading-5 overflow-x-auto bg-[#FDFDFD]">
+<div class="text-secondary italic"># Remediation Patch: Eliminates mutable state &amp; recursion overhead</div>
+<div><span class="text-primary font-semibold">from</span> typing <span class="text-primary font-semibold">import</span> Any, List, Optional</div>
+<div><span class="text-primary font-semibold">from</span> functools <span class="text-primary font-semibold">import</span> lru_cache</div>
+<div class="h-4"></div>
+<div><span class="text-primary font-semibold">class</span> <span class="font-bold">DataSinkPipeline</span>:</div>
+<div class="pl-4"><span class="text-primary font-semibold">def</span> <span class="font-bold">__init__</span>(self, cluster_id: <span class="text-tertiary font-medium">str</span>):</div>
+<div class="pl-8">self.cluster_id = cluster_id</div>
+<div class="pl-8">self.registry: dict = {}</div>
+<div class="h-4"></div>
+<div class="bg-[#DCFCE7] -mx-2 px-2 py-0.5 border-l-2 border-[#16A34A]">
+<div class="pl-4"><span class="text-primary font-semibold">def</span> <span class="font-bold text-[#16A34A]">append_to</span>(self, element: Any, target: Optional[List[Any]] = <span class="text-tertiary font-medium">None</span>) -&gt; List[Any]:</div>
+<div class="pl-8 text-secondary italic"># Safe evaluation: allocate fresh list if parameter is None</div>
+<div class="pl-8">resolved_target = [] <span class="text-primary font-semibold">if</span> target <span class="text-primary font-semibold">is</span> <span class="text-tertiary font-medium">None</span> <span class="text-primary font-semibold">else</span> target</div>
+<div class="pl-8">resolved_target.append(element)</div>
+<div class="pl-8"><span class="text-primary font-semibold">return</span> resolved_target</div>
+</div>
+<div class="h-4"></div>
+<div class="bg-[#DCFCE7] -mx-2 px-2 py-0.5 border-l-2 border-[#16A34A]">
+<div class="pl-4"><span class="text-tertiary font-medium">@staticmethod</span></div>
+<div class="pl-4"><span class="text-tertiary font-medium">@lru_cache</span>(maxsize=<span class="text-tertiary font-medium">1024</span>)</div>
+<div class="pl-4"><span class="text-primary font-semibold">def</span> <span class="font-bold text-[#16A34A]">recursive_leak</span>(n: <span class="text-tertiary font-medium">int</span>) -&gt; <span class="text-tertiary font-medium">int</span>:</div>
+<div class="pl-8 text-secondary italic"># Memoized linear time O(n) execution</div>
+<div class="pl-8"><span class="text-primary font-semibold">if</span> n &lt;= 1: <span class="text-primary font-semibold">return</span> 1</div>
+<div class="pl-8"><span class="text-primary font-semibold">return</span> DataSinkPipeline.recursive_leak(n - 1) + DataSinkPipeline.recursive_leak(n - 2)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= SECTION 04 // TAKEAWAY ================= -->
+<div class="p-space-md bg-surface-container-low">
+<div class="border border-on-surface bg-surface-container-lowest p-space-sm flex items-start gap-space-sm border-l-4 border-l-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0" data-icon="lightbulb">lightbulb</span>
+<div>
+<span class="text-label-sm font-label-sm font-bold text-on-surface uppercase tracking-wider block mb-0.5">04 // ARCHITECTURAL TAKEAWAY</span>
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-bold">KEY PRINCIPLE:</span> Default parameters are bound upon function definition, not execution. Treat AST static analysis as vital pre-flight telemetry before running continuous batch jobs.
+              </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- ==================== FOOTER STATUS BAR (JSON DEFINITION) ==================== -->
+<footer class="w-full max-w-[1400px] mx-auto bg-surface-container-low border-t-2 border-on-surface px-space-md py-space-xs flex flex-col md:flex-row justify-between items-center text-label-sm font-label-sm gap-2">
+<!-- Status / Latency -->
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 bg-[#16A34A] inline-block"></span>
+<span class="text-on-surface font-semibold">STATUS: AUDIT COMPLETE // LATENCY: 382ms</span>
+</div>
+<!-- Engine Provenance -->
+<div class="text-secondary font-medium text-center">
+<span>ENGINE: GOOGLE GEMINI (gemini-1.5-pro) // TEMP: 1.0 (SAVAGE)</span>
+</div>
+<!-- Workshop & Specs Reference -->
+<div class="flex items-center gap-space-md text-secondary">
+<a class="hover:text-primary underline underline-offset-2" href="#">TERMS // SPEC</a>
+<span>|</span>
+<span class="text-on-surface font-bold">CODE ROASTER v1.4.2 — Made at GDG Nashik Pre-DevFest Workshop</span>
+</div>
+</footer>
+</body></html>

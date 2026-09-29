@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CODE ROASTER v1.4.2 // Technical Drafting Desk</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Space Grotesk & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#763300",
+            "on-tertiary-fixed": "#331200",
+            "surface-container": "#eeeeec",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#5a413b",
+            "on-primary-container": "#fffbff",
+            "on-background": "#1a1c1b",
+            "primary-fixed-dim": "#ffb4a3",
+            "surface-variant": "#e2e3e1",
+            "tertiary-fixed-dim": "#ffb68e",
+            "primary-fixed": "#ffdad2",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#bb5810",
+            "on-tertiary-container": "#fffbff",
+            "error": "#ba1a1a",
+            "surface-container-low": "#f4f4f2",
+            "on-secondary-fixed": "#1c1b1b",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#2f3130",
+            "secondary-container": "#e5e2e1",
+            "outline-variant": "#e2bfb6",
+            "surface": "#f9f9f7",
+            "primary-container": "#d14221",
+            "outline": "#8e7069",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#b22c0b",
+            "surface-container-high": "#e8e8e6",
+            "secondary-fixed": "#e5e2e1",
+            "surface-container-highest": "#e2e3e1",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#656464",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#c8c6c5",
+            "primary": "#ae2a08",
+            "secondary": "#5f5e5e",
+            "background": "#f9f9f7",
+            "surface-bright": "#f9f9f7",
+            "tertiary": "#984300",
+            "on-secondary-fixed-variant": "#474646",
+            "inverse-primary": "#ffb4a3",
+            "on-primary-fixed": "#3d0700",
+            "on-surface": "#1a1c1b",
+            "surface-dim": "#dadad8",
+            "on-primary-fixed-variant": "#8b1b00",
+            "tertiary-fixed": "#ffdbca",
+            "inverse-on-surface": "#f1f1ef"
+          },
+          "borderRadius": {
+            "DEFAULT": "0px",
+            "lg": "0px",
+            "xl": "0px",
+            "full": "0px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "margin": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["JetBrains Mono", "monospace"],
+            "headline-lg": ["Space Grotesk", "sans-serif"],
+            "label-md": ["JetBrains Mono", "monospace"],
+            "headline-md": ["Space Grotesk", "sans-serif"],
+            "label-sm": ["JetBrains Mono", "monospace"],
+            "headline-sm": ["Space Grotesk", "sans-serif"],
+            "body-sm": ["JetBrains Mono", "monospace"],
+            "headline-xl": ["Space Grotesk", "sans-serif"],
+            "body-lg": ["JetBrains Mono", "monospace"],
+            "label-lg": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["9px", { "lineHeight": "12px", "letterSpacing": "0.14em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "headline-xl": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Technical Millimeter Blueprint Grid Canvas */
+    .blueprint-canvas {
+      background-color: #f4f4f2;
+      background-image: 
+        linear-gradient(to right, #e2e3e1 1px, transparent 1px),
+        linear-gradient(to bottom, #e2e3e1 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    
+    /* Hard Blueprint Ink Cast Shadows */
+    .shadow-ink-sm {
+      box-shadow: 2px 2px 0px #1a1c1b;
+    }
+    .shadow-ink-md {
+      box-shadow: 3px 3px 0px #1a1c1b;
+    }
+    .shadow-ink-lg {
+      box-shadow: 4px 4px 0px #1a1c1b;
+    }
+    .shadow-ink-orange {
+      box-shadow: 3px 3px 0px #ae2a08;
+    }
+
+    /* Drafting registration marks */
+    .reg-mark-tl::before {
+      content: '+';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1c1b;
+    }
+    .reg-mark-tr::after {
+      content: '+';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1c1b;
+    }
+
+    /* Spinner Animation for loader */
+    @keyframes slash-spin {
+      0% { content: '[ / ]'; }
+      25% { content: '[ — ]'; }
+      50% { content: '[ \\ ]'; }
+      75% { content: '[ | ]'; }
+      100% { content: '[ / ]'; }
+    }
+    .slash-rotator::after {
+      content: '[ / ]';
+      animation: slash-spin 1s infinite steps(1);
+    }
+  </style>
+</head>
+<body class="blueprint-canvas text-on-surface min-h-screen flex flex-col justify-between selection:bg-primary selection:text-on-primary">
+<!-- Top Global Bar (Shared Component Anchored) -->
+<header class="w-full px-space-md md:px-margin flex justify-between items-center h-14 border-b-2 border-on-surface bg-surface shadow-none sticky top-0 z-50">
+<div class="flex items-center space-x-space-md">
+<!-- Crosshair Tick Anchor -->
+<div class="flex items-center space-x-space-sm">
+<span class="text-on-surface font-headline-sm text-headline-sm font-bold tracking-tight">CODE ROASTER v1.4.2</span>
+<span class="border border-on-surface px-1.5 py-0.5 text-label-sm font-label-sm bg-surface-container-highest text-on-surface">RELEASE // DESK</span>
+</div>
+<!-- Shared Nav Links -->
+<nav class="hidden md:flex items-center space-x-space-md text-label-md font-label-md">
+<span class="border-b-2 border-primary text-primary font-bold py-1 cursor-pointer">01 // INPUT</span>
+<span class="text-secondary font-medium py-1 hover:text-primary cursor-pointer transition-colors duration-75">02 // AUDIT</span>
+<span class="text-secondary font-medium py-1 hover:text-primary cursor-pointer transition-colors duration-75">DOCS</span>
+</nav>
+</div>
+<!-- Right Utility Actions -->
+<div class="flex items-center space-x-space-sm">
+<button class="border border-on-surface bg-surface-container-lowest px-space-sm py-1.5 text-label-sm font-label-sm hover:bg-surface-container transition-transform active:translate-x-[1px] active:translate-y-[1px] flex items-center gap-1 shadow-ink-sm">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span>+ ERROR MESSAGE</span>
+</button>
+<button class="border-2 border-on-surface bg-primary text-on-primary px-space-md py-1.5 text-label-sm font-label-sm hover:bg-primary-container transition-transform active:translate-x-[2px] active:translate-y-[2px] shadow-ink-sm flex items-center gap-1.5">
+<span>ROAST MY CODE [Ctrl+Enter]</span>
+</button>
+<div class="h-6 w-[1px] bg-surface-variant mx-1"></div>
+<button class="w-8 h-8 border border-on-surface bg-surface-container-lowest flex items-center justify-center hover:bg-surface-container transition-colors" title="Settings / Tune">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+</header>
+<!-- Technical Canvas Workstation Container -->
+<main class="w-full max-w-[1360px] mx-auto p-space-md md:p-space-lg flex-1 flex flex-col justify-center">
+<!-- Secondary Drafting Header: Coordinates & Subsystem Spec -->
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-surface-variant text-label-sm font-label-sm text-secondary">
+<div class="flex items-center space-x-space-md">
+<span>GRID: 24x24MM // ISO-DRAFT-A2</span>
+<span class="hidden sm:inline">STATION: #DRAFT-09</span>
+<span class="text-primary font-bold">STATUS: WORKSPACE READY</span>
+</div>
+<div class="flex items-center space-x-space-sm">
+<span>LAT: 19.9975° N</span>
+<span>LON: 73.7898° E</span>
+<span class="border border-on-surface px-1 bg-surface-container-high text-on-surface">[LIVE TELEMETRY]</span>
+</div>
+</div>
+<!-- Main Workstation Drafting Card (Centered, 2px Solid Ink, Hard 4px Shadow) -->
+<div class="relative bg-surface-container-lowest border-2 border-on-surface shadow-ink-lg reg-mark-tl reg-mark-tr">
+<!-- Card Section 1: Technical Control Deck -->
+<div class="p-space-sm md:p-space-md border-b-2 border-on-surface bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<!-- Left Title Identifier -->
+<div class="flex items-center gap-space-sm">
+<div class="w-3 h-3 bg-primary border border-on-surface"></div>
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight uppercase">CODE ROASTER</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 bg-surface-container-highest border border-on-surface">v1.4.2 [RELEASE]</span>
+</div>
+<!-- Center Controls: Roast Level & Language -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Roast Level Radio Selector -->
+<div class="flex items-center border border-on-surface bg-surface-container-lowest text-label-sm font-label-sm p-[2px]">
+<span class="px-2 py-1 text-secondary font-medium hover:text-on-surface cursor-pointer">[1] MILD</span>
+<div class="w-[1px] h-4 bg-on-surface"></div>
+<span class="px-2 py-1 text-secondary font-medium hover:text-on-surface cursor-pointer">[2] MEDIUM</span>
+<div class="w-[1px] h-4 bg-on-surface"></div>
+<span class="px-2 py-1 bg-primary text-on-primary font-bold shadow-ink-sm flex items-center gap-1 cursor-pointer">
+<span>[3] SAVAGE</span>
+<span class="text-[9px]">●</span>
+</span>
+</div>
+<!-- Language Selector -->
+<div class="relative">
+<button class="border border-on-surface bg-surface-container-lowest px-space-sm py-1.5 text-label-sm font-label-sm flex items-center gap-2 hover:bg-surface-container transition-colors shadow-ink-sm">
+<span class="font-bold text-on-surface">PYTHON (CPython 3.12)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+</button>
+</div>
+<!-- Error Message Auxiliary Drawer Trigger -->
+<button class="border border-on-surface bg-surface-container-lowest px-space-sm py-1.5 text-label-sm font-label-sm hover:bg-surface-container transition-colors shadow-ink-sm flex items-center gap-1">
+<span class="text-primary font-bold">+</span>
+<span>ERROR MESSAGE</span>
+</button>
+</div>
+<!-- Primary Trigger Action -->
+<div>
+<button class="border-2 border-on-surface bg-primary text-on-primary px-space-md py-2 text-label-md font-label-md tracking-wider flex items-center gap-2 shadow-ink-sm hover:bg-primary-container transition-transform active:translate-x-[2px] active:translate-y-[2px]">
+<span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+<span class="font-bold">ROAST MY CODE</span>
+<span class="bg-on-tertiary-fixed text-tertiary-fixed text-[10px] px-1 py-0.2 border border-on-tertiary-fixed-variant">[Ctrl+Enter]</span>
+</button>
+</div>
+</div>
+<!-- Card Section 2: Two-Column Technical Body -->
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[580px]">
+<!-- Left Column: Source Input Workstation (~55% / 7 cols) -->
+<div class="lg:col-span-7 border-b-2 lg:border-b-0 lg:border-r-2 border-on-surface flex flex-col justify-between bg-surface-container-lowest">
+<!-- Code Viewport Header Strip -->
+<div class="px-space-md py-space-sm bg-surface-container border-b border-on-surface flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="w-2.5 h-2.5 bg-surface-dim border border-on-surface inline-block"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">INPUT // SRC — Your Code</span>
+<span class="text-label-sm font-label-sm text-secondary px-1 border border-surface-variant bg-surface">PY</span>
+</div>
+<div class="flex items-center space-x-space-sm text-label-sm font-label-sm">
+<button class="hover:text-primary underline underline-offset-2 transition-colors">[LOAD SAMPLE]</button>
+<span class="text-surface-variant">/</span>
+<button class="hover:text-error underline underline-offset-2 transition-colors">[CLEAR]</button>
+</div>
+</div>
+<!-- Editor Body with Integrated Line Numbers Gutter -->
+<div class="flex-1 flex overflow-x-auto font-body-md text-body-md leading-relaxed selection:bg-primary selection:text-on-primary">
+<!-- Gutter: Line Numbers 1 to 24 -->
+<div class="w-12 py-space-md bg-surface-container-low border-r border-surface-variant text-secondary select-none font-label-sm text-right pr-space-sm space-y-1">
+<div>01</div>
+<div>02</div>
+<div>03</div>
+<div>04</div>
+<div>05</div>
+<div>06</div>
+<div>07</div>
+<div>08</div>
+<div>09</div>
+<div>10</div>
+<div>11</div>
+<div>12</div>
+<div class="text-primary font-bold bg-primary-fixed">13</div>
+<div class="text-primary font-bold bg-primary-fixed">14</div>
+<div>15</div>
+<div>16</div>
+<div>17</div>
+<div>18</div>
+<div>19</div>
+<div>20</div>
+<div>21</div>
+<div>22</div>
+<div>23</div>
+<div>24</div>
+</div>
+<!-- Code Content Canvas -->
+<div class="flex-1 p-space-md overflow-x-auto text-on-surface bg-surface-container-lowest">
+<div class="space-y-1 font-body-md">
+<p><span class="text-secondary italic"># SPECIFICATION: User registration batch processor</span></p>
+<p><span class="text-secondary italic"># INVENTORY: System memory leaks detected in unit benchmarks</span></p>
+<p><span class="text-primary font-semibold">import</span> os, sys, time</p>
+<p><span class="text-primary font-semibold">from</span> typing <span class="text-primary font-semibold">import</span> List, Optional, Any</p>
+<p> </p>
+<p><span class="text-primary font-semibold">class</span> <span class="text-tertiary font-bold underline decoration-1">BatchPipeline</span>:</p>
+<p class="pl-4"><span class="text-primary font-semibold">def</span> <span class="text-tertiary-container font-semibold">__init__</span>(self, pipeline_id: str):</p>
+<p class="pl-8">self.pipeline_id = pipeline_id</p>
+<p class="pl-8">self.created_at = time.time()</p>
+<p> </p>
+<p class="pl-4"><span class="text-secondary italic"># [!] WARNING: Classic mutable default argument antipattern</span></p>
+<p class="pl-4"><span class="text-primary font-semibold">def</span> <span class="text-tertiary-container font-semibold">append_to</span>(self, element: Any, <span class="bg-error-container text-error px-1 border border-error font-bold">target: list = []</span>) -&gt; list:</p>
+<p class="pl-8 bg-error-container/30 border-l-2 border-primary">target.append(element)</p>
+<p class="pl-8">print(<span class="text-on-surface-variant">f"Telemetry buffer count: {len(target)}"</span>)</p>
+<p class="pl-8"><span class="text-primary font-semibold">return</span> target</p>
+<p> </p>
+<p class="pl-4"><span class="text-primary font-semibold">def</span> <span class="text-tertiary-container font-semibold">recursive_leak</span>(self, n: int) -&gt; int:</p>
+<p class="pl-8"><span class="text-secondary italic"># Recursive fibonacci with unbounded exponential stack expansion</span></p>
+<p class="pl-8"><span class="text-primary font-semibold">if</span> n &lt;= <span class="text-primary">1</span>: <span class="text-primary font-semibold">return</span> n</p>
+<p class="pl-8"><span class="text-primary font-semibold">return</span> self.recursive_leak(n - <span class="text-primary">1</span>) + self.recursive_leak(n - <span class="text-primary">2</span>)</p>
+<p> </p>
+<p><span class="text-secondary italic"># Execution block harness</span></p>
+<p>node = BatchPipeline(<span class="text-on-surface-variant">"ALPHA-01"</span>)</p>
+<p>res = node.append_to(<span class="text-on-surface-variant">"PAYLOAD_INIT"</span>)</p>
+</div>
+</div>
+</div>
+<!-- Bottom Editor Status Strip -->
+<div class="px-space-md py-1.5 bg-surface-container-low border-t border-on-surface flex flex-wrap items-center justify-between text-label-sm font-label-sm text-secondary">
+<div class="flex items-center space-x-space-md">
+<span class="text-on-surface font-semibold">LN: 14 | COL: 28</span>
+<span>SPACES: 4</span>
+<span>UTF-8</span>
+<span class="text-primary font-bold">PYTHON 3.12</span>
+</div>
+<div class="flex items-center space-x-space-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>BUFFER DIRTY [MODIFIED]</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Audit Diagnostic Deck (~45% / 5 cols) -->
+<div class="lg:col-span-5 flex flex-col justify-between bg-surface">
+<!-- Header Strip & Interactive State Switcher -->
+<div class="p-space-sm bg-surface-container border-b border-on-surface flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center space-x-2">
+<span class="w-2.5 h-2.5 bg-primary border border-on-surface inline-block"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">AUDIT // REPORT — Roast Report</span>
+</div>
+<!-- State Selector Tabs -->
+<div class="flex items-center border border-on-surface bg-surface-container-lowest text-label-sm font-label-sm p-[2px]">
+<button class="px-2 py-0.5 bg-on-surface text-surface font-bold border border-on-surface" id="tab-empty" onclick="switchState('empty')">
+                [EMPTY]
+              </button>
+<button class="px-2 py-0.5 text-secondary hover:text-on-surface font-medium" id="tab-loading" onclick="switchState('loading')">
+                [LOADING]
+              </button>
+<button class="px-2 py-0.5 text-secondary hover:text-on-surface font-medium" id="tab-error" onclick="switchState('error')">
+                [ERROR]
+              </button>
+</div>
+</div>
+<!-- Diagnostic Telemetry Canvas -->
+<div class="flex-1 p-space-md flex flex-col justify-center relative overflow-hidden bg-surface-container-lowest/50">
+<!-- STATE 1: EMPTY STATE (Active by default) -->
+<div class="flex flex-col items-center text-center p-space-lg border border-dashed border-on-surface bg-surface-container-lowest max-w-sm mx-auto shadow-ink-sm" id="state-empty">
+<div class="w-16 h-16 border-2 border-on-surface flex items-center justify-center font-headline-lg text-headline-lg font-bold bg-surface-container text-on-surface mb-space-md shadow-ink-sm">
+                {}
+              </div>
+<div class="inline-block border border-on-surface px-2 py-0.5 text-label-sm font-label-sm font-bold bg-surface-container-highest mb-2">
+                VERDICT // AWAITING AUDIT
+              </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight mb-2">
+                AWAITING CODE SUBMISSION
+              </h3>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed mb-space-md">
+                Paste your script into the drafting gutter and trigger execution <span class="text-on-surface font-semibold">[Ctrl+Enter]</span>. The roast will compile here with calibrated technical critique.
+              </p>
+<div class="text-label-sm font-label-sm text-secondary border-t border-surface-variant pt-space-sm w-full flex justify-between">
+<span>AST: READY</span>
+<span>ENGINE: IDLE</span>
+</div>
+</div>
+<!-- STATE 2: LOADING STATE (Hidden initially) -->
+<div class="hidden flex flex-col items-center text-center p-space-lg border-2 border-on-surface bg-surface max-w-sm mx-auto shadow-ink-md" id="state-loading">
+<div class="w-16 h-16 border-2 border-on-surface bg-surface-container-highest flex items-center justify-center font-label-lg text-label-lg font-bold text-primary mb-space-md shadow-ink-sm slash-rotator">
+</div>
+<span class="inline-block border border-primary text-primary px-2 py-0.5 text-label-sm font-label-sm font-bold bg-primary-fixed mb-2">
+                ANALYSIS IN PROGRESS
+              </span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight mb-2">
+                CALIBRATING ROASTER...
+              </h3>
+<div class="font-body-sm text-body-sm text-secondary text-left space-y-2 w-full bg-surface-container-low p-space-sm border border-surface-variant mb-space-sm">
+<div class="flex items-center justify-between">
+<span>[✓] Parsing AST syntax tree...</span>
+<span class="text-primary font-bold">DONE</span>
+</div>
+<div class="flex items-center justify-between">
+<span>[⟳] Analyzing cognitive complexity...</span>
+<span class="animate-pulse font-bold text-on-surface">RUNNING</span>
+</div>
+<div class="flex items-center justify-between">
+<span>[·] Querying gemini-1.5-pro...</span>
+<span class="text-secondary font-mono">WAIT</span>
+</div>
+</div>
+<div class="w-full bg-surface-variant h-2 border border-on-surface overflow-hidden">
+<div class="bg-primary h-full w-2/3 animate-pulse"></div>
+</div>
+</div>
+<!-- STATE 3: ERROR STATE (Hidden initially) -->
+<div class="hidden flex flex-col items-center text-center p-space-lg border-2 border-error bg-surface-container-lowest max-w-sm mx-auto shadow-ink-sm" id="state-error">
+<div class="w-16 h-16 border-2 border-error bg-error-container flex items-center justify-center font-headline-lg text-headline-lg font-extrabold text-error mb-space-md shadow-ink-sm">
+                !
+              </div>
+<span class="inline-block border border-error text-error px-2 py-0.5 text-label-sm font-label-sm font-bold bg-error-container mb-2">
+                DIAGNOSTIC FAULT // 0x4B2
+              </span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight mb-2">
+                SYSTEM EXCEPTION 0x4B2
+              </h3>
+<div class="font-body-sm text-body-sm text-left bg-surface-container-high border-l-2 border-error p-space-sm text-on-surface w-full mb-space-md font-mono">
+<span class="text-error font-bold block mb-1">&gt; SYNTAX TOKENIZER FAILURE:</span>
+                AST parsing halted: Unexpected EOF while tokenizing indent on line 18.
+              </div>
+<button class="w-full border-2 border-on-surface bg-surface-container-lowest hover:bg-surface-container text-on-surface py-2 px-space-md text-label-sm font-label-sm font-bold flex items-center justify-center gap-2 shadow-ink-sm transition-transform active:translate-x-[1px] active:translate-y-[1px]">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+<span>RETRY ANALYSIS ↻</span>
+</button>
+</div>
+</div>
+<!-- Bottom Telemetry Metric Drawer -->
+<div class="p-space-sm bg-surface-container-low border-t border-on-surface flex items-center justify-between text-label-sm font-label-sm">
+<div class="flex items-center space-x-space-sm">
+<span class="text-secondary font-semibold">ROAST SEVERITY:</span>
+<span class="px-1 bg-primary text-on-primary font-bold">SAVAGE [LEVEL 3]</span>
+</div>
+<div class="flex items-center space-x-1 text-secondary">
+<span>TEMP: 1.0</span>
+<span>//</span>
+<span>MAX_TOKENS: 2048</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Section 3: Technical Specs Strip Footer Inside Card -->
+<div class="px-space-md py-2 bg-surface-container border-t-2 border-on-surface flex flex-wrap items-center justify-between text-label-sm font-label-sm text-secondary">
+<div class="flex items-center space-x-4">
+<span class="flex items-center gap-1.5 text-on-surface font-semibold">
+<span class="w-2 h-2 bg-primary"></span>
+            SHEET REF: CR-2024-V142
+          </span>
+<span class="hidden md:inline">SCALE: 1:1 CODE REFACTOR</span>
+</div>
+<div class="flex items-center space-x-4">
+<span>TOLERANCE: ±0.00ms</span>
+<span class="text-on-surface font-bold">TECHNICAL DRAFTING DESK READY</span>
+</div>
+</div>
+</div>
+<!-- Secondary Technical Quick-Jump Anchors -->
+<div class="mt-space-md flex flex-wrap items-center justify-between text-label-sm font-label-sm text-secondary">
+<div class="flex items-center space-x-space-md">
+<span class="text-on-surface font-bold">SHORTCUT KEYS:</span>
+<span><kbd class="px-1 border border-on-surface bg-surface-container text-on-surface font-mono font-bold">Ctrl+Enter</kbd> Execute Roast</span>
+<span><kbd class="px-1 border border-on-surface bg-surface-container text-on-surface font-mono font-bold">Esc</kbd> Reset Terminal</span>
+<span><kbd class="px-1 border border-on-surface bg-surface-container text-on-surface font-mono font-bold">Tab</kbd> Indent 4-Sp</span>
+</div>
+<div class="flex items-center space-x-space-sm">
+<span class="text-primary font-semibold">PROVENANCE:</span>
+<span>GDG NASHIK TECHNICAL WORKSHOP</span>
+</div>
+</div>
+</main>
+<!-- Global Technical Footer (Shared Component Anchor) -->
+<footer class="w-full px-space-md py-space-xs flex flex-col md:flex-row justify-between items-center text-label-sm font-label-sm border-t border-on-surface bg-surface-container-low shadow-none mt-space-lg">
+<!-- Left Status Telemetry -->
+<div class="flex items-center space-x-space-sm py-1">
+<span class="w-2 h-2 rounded-full bg-[#16A34A] animate-ping inline-block"></span>
+<span class="font-bold text-on-surface">STATUS: ONLINE (gemini-1.5-pro)</span>
+<span class="text-secondary">//</span>
+<span class="text-secondary font-medium">ENGINE: GOOGLE GEMINI</span>
+<span class="text-secondary hidden sm:inline">// PROVENANCE: TECHNICAL DRAFTING DESK</span>
+</div>
+<!-- Center Latency & Token Counters -->
+<div class="flex items-center space-x-space-md py-1 text-secondary">
+<span class="hover:text-primary cursor-pointer transition-colors duration-100">LATENCY: 48ms</span>
+<span>//</span>
+<span>TOKEN_COUNT: 412</span>
+</div>
+<!-- Right Brand Signoff -->
+<div class="flex items-center space-x-space-sm py-1">
+<span class="text-secondary hover:text-primary cursor-pointer transition-colors duration-100 underline underline-offset-2">TERMS // SPEC</span>
+<span class="text-surface-variant">|</span>
+<span class="text-on-surface font-semibold">CODE ROASTER v1.4.2 — Made at GDG Nashik Pre-DevFest Workshop</span>
+</div>
+</footer>
+<!-- Vanilla State Switcher Script -->
+<script>
+    function switchState(state) {
+      // Elements
+      const emptyCard = document.getElementById('state-empty');
+      const loadingCard = document.getElementById('state-loading');
+      const errorCard = document.getElementById('state-error');
+
+      const tabEmpty = document.getElementById('tab-empty');
+      const tabLoading = document.getElementById('tab-loading');
+      const tabError = document.getElementById('tab-error');
+
+      // Hide all states
+      emptyCard.classList.add('hidden');
+      loadingCard.classList.add('hidden');
+      errorCard.classList.add('hidden');
+
+      // Reset tab styling
+      const defaultTabClass = "px-2 py-0.5 text-secondary hover:text-on-surface font-medium border-0";
+      const activeTabClass = "px-2 py-0.5 bg-on-surface text-surface font-bold border border-on-surface shadow-none";
+
+      tabEmpty.className = defaultTabClass;
+      tabLoading.className = defaultTabClass;
+      tabError.className = defaultTabClass;
+
+      // Activate selected state
+      if (state === 'empty') {
+        emptyCard.classList.remove('hidden');
+        tabEmpty.className = activeTabClass;
+      } else if (state === 'loading') {
+        loadingCard.classList.remove('hidden');
+        tabLoading.className = activeTabClass;
+      } else if (state === 'error') {
+        errorCard.classList.remove('hidden');
+        tabError.className = "px-2 py-0.5 bg-error text-on-error font-bold border border-error shadow-none";
+      }
+    }
+
+    // Keyboard trigger shortcut simulation
+    document.addEventListener('keydown', function(event) {
+      if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+        event.preventDefault();
+        switchState('loading');
+        setTimeout(() => {
+          switchState('error');
+        }, 1800);
+      }
+    });
+  </script>
+</body></html>
